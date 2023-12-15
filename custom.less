@@ -1,0 +1,79 @@
+@height: 7px;
+@width: @height + 3px;
+@font-size: 14px;
+
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+.display-5{
+  font-family: Poppins;
+  font-weight:500;
+}
+.col-md-8{
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: italic;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #3c9687;
+  }
+
+  .btn-primary {
+    background-color: #3c9687;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3c9687;
+  }
+
+  .btn-secondary {
+    background-color: #4778a3;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #464f55;
+  }
+  
+  .btn-sm {
+    padding: @height @width;
+    font-size: @font-size;
+    .bordered();
+  }
+
+  .card{
+    .bordered();
+    .card-header{
+      background-color: rgb(182, 204, 208);
+    }
+    .btn-link{
+      font-family: sans-serif;
+      font-size: large;
+      color: black;
+      text-decoration: none;
+      font-weight: 500px;
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-menu{
+    background-color: rgb(224, 246, 250);
+  }
+
+  .navbar-brand{
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight:500;
+  }
+
+

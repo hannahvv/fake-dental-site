@@ -1,0 +1,240 @@
+<!--
+Used https://getbootstrap.com/docs/4.0/components/buttons/ for references to Bootstrap elements
+    Bootstraps Used:
+1. The Nav Bar Elements of BootStrap. 
+2. Dropdown Element for Nav Tabs that contain more information
+3. Dropdown Menu for Nav Bar when screen resizes to a smaller screen
+4. Form element
+5. Modal Element
+6. Button Element
+7. Accordion Collapse Element-->
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">  
+  
+  <!-- 2. include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 
+  Bootstrap is designed to be responsive to mobile.
+  Mobile-first styles are part of the core framework.
+   
+  width=device-width sets the width of the page to follow the screen-width
+  initial-scale=1 sets the initial zoom level when the page is first loaded   
+  -->
+  
+  <meta name="author" content="Hannah Vaccaro">
+  <meta name="description" content="A fake imitation of a dental website to advertise the clinic">  
+    
+  <title>Fake Dental Homepage</title>
+  
+  <!-- 3. link bootstrap -->
+  <!-- if you choose to use CDN for CSS bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap" rel="stylesheet">
+  <!-- 
+  Use a link tag to link an external resource. A rel (relationship) specifies relationship between the current document and the linked resource. 
+  -->
+  
+  <!-- For development, we may want a better-printed CSS, but with larger download size.  Ignore "min"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.css" rel="stylesheet"> 
+  -->
+  <!-- if you choose to download bootstrap and host it locally -->
+  <!-- <link rel="stylesheet" href="path-to-your-file/bootstrap.min.css" /> --> 
+  
+  <!-- include your CSS
+       by including your CSS last, anything you write may override (depending on specificity) the Bootstrap CSS
+  <link rel="stylesheet" href="your-custom.css" /> 
+  -->
+  <link rel="stylesheet/less" type="text/css" href="styles/custom.less">
+  <script src="https://cdn.jsdelivr.net/npm/less" >
+  </script>  
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A3CCC9">
+  <a class="navbar-brand" href="#">
+    <img src="cartoon-tooth.png" width="60" height="40" alt="cartoon tooth holding a toothbrush">
+    Dental Smiles
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropnav" aria-controls="dropnav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="dropnav">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">The Team</a>
+            <a class="dropdown-item" href="#">The Company</a>
+            <a class="dropdown-item" href="#">Dr. Smith</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Cleaning</a>
+            <a class="dropdown-item" href="#">Oral Surgery</a>
+            <a class="dropdown-item" href="#">Root Canal Therapy</a>
+            <a class="dropdown-item" href="#">Deep Cleaning</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+    </li>
+</ul>
+<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#requestbtn">
+    Request an Appointment
+  </button>
+
+  <div class="modal" id = "requestbtn" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Request Form</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Name" name="txtName">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Email address" name="txtEmail">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Describe your dental concerns and what you want done." rows="4"></textarea>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-secondary btn-block" value="Send" name="btnSend">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+
+<!--From example site-->
+<div class="p-5 mb-3 text-black" style = "background-color: aliceblue;">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold">Dental Smiles</h1>
+        <p class="col-md-8 fs-4">A brighter smile leads to a brighter future</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>About Us</h3>
+                <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="first-heading">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Our History
+                          </button>
+                        </h5>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="first-heading" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Our practice started as a family business as our Dr. Smith inherited the practice from his father who inherited it from his grandfather.
+                            We keep their goals and culture from before alive as we continue to practice as a family. We treat all of our own staff like family.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="second-heading">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Our Purpose
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="second-heading" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Our purpose is to provide affordable, but effective treatment to our patients. We follow preventative measures and want to stop and prevent further issues.
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="third-heading">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Our Goal
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="third-heading" data-bs-parent="#accordion">
+                        <div class="card-body">
+                          Our goals are to remain affordable to the general public. We will strive to accept all forms of health insurance and prevent patients from being overcharged
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-md-4">
+                <h3>Services</h3>
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="smiling-women.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">We provide a large range of services including a simple cleaning or deep cleaning of the
+                        the teeth and gums, invisalign installation, along with different cosmetic options and oral surgeries.
+                      </p>
+                      <a href="#" class="btn btn-primary">Learn about Pricing</a>
+                    </div>
+                
+                  </div>
+            </div>
+
+            <div class="col-md-4">
+                <h3>Request an Appointment!</h3>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" name="txtName">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Email address" name="txtEmail">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="Describe your dental concerns and what you want done." rows="4"></textarea>
+                </div>
+                <input type="submit" class="btn btn-secondary btn-block" value="Send" name="btnSend">
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2023 Dental Smiles</p>
+
+        <ul class="nav col-md-5 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">The Team</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">The Company</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Dr. Smith</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+
+        </ul>
+    </footer>
+</div>
+</div>
+  
+    <!-- 4. include bootstrap Javascript
+        Why at the end of the body?
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
